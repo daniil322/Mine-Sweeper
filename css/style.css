@@ -1,0 +1,47 @@
+.board {
+  background-color: grey;
+}
+
+.marked {
+  color: lavender;
+}
+.cell {
+
+    height: 20px;
+    width: 20px;
+    background-color: #C0C0C0;
+    border: 1.5px solid;
+    border-top-color: #ffffff;
+    border-right-color: #7B7B7B;
+    border-bottom-color: #7B7B7B;
+    border-left-color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+body {
+  background-color: rgba(20, 70, 179, 0.568);
+}
+.gameOver{
+    font-size: 40px;
+}
+
+.smiley{
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    object-fit: cover;
+    text-align: center;
+}
+.hints{
+    font-size: 30px;
+}
+.time{
+    font-family: fantasy
+}
+.lives{
+
+}
