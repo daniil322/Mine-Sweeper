@@ -26,7 +26,7 @@ function showHints() {
 function hintGiver(i, j) {
   if (!isGameOn) return;
   if (!gHintCnt) return;
-  if (hintMode == true) return;
+  if (hintMode == true) hintMode = false;
   hintMode = true;
   document.querySelector(".hintMode").innerHTML = "Hint Mode Activated";
   return gBoard;
@@ -159,6 +159,9 @@ function restartGlobal(type) {
   smileyFace(normalFace);
   lastGameStartType = type;
   gFlaggedcnt = 0;
+  if (localStorage.getItem(type) === null) {
+    document.querySelector(".bestTime").innerHTML = "No Best Time Yet";
+  }
   if (localStorage.getItem(type) !== null) {
     document.querySelector(".bestTime").innerHTML =
       "Best Time=" + localStorage.getItem(type) + " " + type + " Mode";
