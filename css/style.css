@@ -1,3 +1,6 @@
+body {
+  background-color: rgba(2, 9, 14, 0.568);
+}
 .board {
   background-color: grey;
 }
@@ -6,42 +9,82 @@
   color: lavender;
 }
 .cell {
-
-    height: 20px;
-    width: 20px;
-    background-color: #C0C0C0;
-    border: 1.5px solid;
-    border-top-color: #ffffff;
-    border-right-color: #7B7B7B;
-    border-bottom-color: #7B7B7B;
-    border-left-color: #ffffff;
-    text-align: center;
-    vertical-align: middle;
+  height: 20px;
+  width: 20px;
+  background-color: #c0c0c0;
+  border: 1.5px solid;
+  border-top-color: #ffffff;
+  border-right-color: #7b7b7b;
+  border-bottom-color: #7b7b7b;
+  border-left-color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+}
+.gameOver {
+  font-size: 40px;
+}
+.cell:hover {
+  transition-delay: 150ms;
+  background-color: lightblue;
 }
 
-body {
-  background-color: rgba(20, 70, 179, 0.568);
+.smiley {
+  font-size: 25px;
+  height: 40px;
+  width: 40px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  object-fit: cover;
+  text-align: center;
 }
-.gameOver{
-    font-size: 40px;
+.hints {
+  font-size: 30px;
+}
+.time {
+  font-family: fantasy;
+  width: 30%;
+  background-color: olive;
+  margin-right: 5px;
 }
 
-.smiley{
-    font-size: 25px;
-    height: 40px;
-    width: 40px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    object-fit: cover;
-    text-align: center;
+.safeClick {
+  background-color: brown;
+  margin: 5px;
 }
-.hints{
-    font-size: 30px;
+.bestTime {
+  background-color: green;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-.time{
-    font-family: fantasy
-}
-.lives{
 
+.manuallyMine {
+  background-color: chocolate;
+  margin-right: 5px;
+}
+.selected {
+  background-color: brown;
+}
+.difficulty {
+  background-color: midnightblue;
+  margin-right: 5px;
+}
+.round {
+  display: inline-block;
+  width: 19%;
+  height: 30%;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: -0.065em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  z-index: 1;
+  border-width: 4px;
+  border-style: solid;
+}
+.undo {
+  width: 11%;
+  height: 8%;
+  text-align: center;
+  background-color: red;
 }

@@ -8,17 +8,33 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body onload="initGame('easy')" oncontextmenu="return false;">
-    <div class="smiley" onclick="smileyFace('reset')"></div><span class="lives"></span>
+    <div class="smiley" onclick="smileyFace('reset')"></div>
+    <span class="lives"></span>
+    <span class=" round undo" onclick="undoMove()">Undo Move</span>
+    <div class="hintMode"></div>
     <table class="board">
       <tbody class="board"></tbody>
     </table>
-    <h2 class="time">0</h2>
-    <h2 class='bestTime'></h2>
+    <span class="manualMode"></span>
+    <div class="startManualMode"></div>
+    <span class="round safeClick" onclick="safeClick()"></span>
+    <div class="hints" onclick="hintGiver()"></div>
+    <h2 class="round time">0</h2>
+    <h2 class="round bestTime"></h2>
     <div class="gameOver"></div>
-    <div class="hints" onclick='hintGiver(this)'></div>
-    <button onclick="initGame('easy')">Easy</button>
-    <button onclick="initGame('normal')">Normal</button>
-    <button onclick="initGame('hard')">Hard</button>
+    <button class="round manuallyMine" onclick="startManuallMode()">
+      Start Manuall Mode
+    </button>
+    <button class="round manuallyMine" onclick="manuallyPositionedMines()">
+      Manually Positioned Mines
+    </button>
+    <br />
+    <br />
+    <button class="round difficulty" onclick="initGame('easy')">Easy</button>
+    <button class="round difficulty" onclick="initGame('normal')">
+      Normal
+    </button>
+    <button class="round difficulty" onclick="initGame('hard')">Hard</button>
     <script src="js/script.js"></script>
     <script src="js/extraFeatures.js"></script>
   </body>
