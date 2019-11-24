@@ -212,6 +212,14 @@ function neighborChecker(location) {
       }
     }
   }
+  if (
+    location.j < 0 ||
+    location.j > gBoard[0].length - 1 ||
+    location.i < 0 ||
+    location.i > gBoard.length - 1
+  ) {
+    return;
+  }
   if (neighborcnt === 0) {
     noMinesNear.unshift(location);
   }

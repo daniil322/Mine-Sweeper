@@ -48,20 +48,6 @@ function hintChoose(i, j) {
   return gBoard;
 }
 
-function deleteHint(location) {
-  for (var i = location.i - 1; i <= location.i + 1; i++) {
-    if (i < 0 || i > gBoard.length - 1) continue;
-    for (var j = location.j - 1; j <= location.j + 1; j++) {
-      if (j < 0 || j > gBoard[0].length - 1) continue;
-      if (i === location.i && j === location.j) continue;
-      if (gBoard[i][j].isMine === false && firstLocation === location) {
-        deleteHint({ i: i, j: j });
-      }
-    }
-  }
-  gBoard[location.i][location.j].neighbors = "";
-}
-
 function showHearts() {
   var elHearts = document.querySelector(".lives");
   strHTML = "";
@@ -124,6 +110,7 @@ function startManuallMode() {
 
 function undoMove() {
   if (gameMoves.length === 0) return;
+  if (gameMoves.length === 1)initGame(lastGameStartType)
   gBoard = gameMoves[0].board;
   gLives = gameMoves[0].lives;
   gFlaggedcnt = gameMoves[0].flagcnt;
@@ -187,7 +174,7 @@ function openZeroNeighbors() {
   noMinesNear.forEach(function(noMine) {
     firstLocation = noMine;
     neighborChecker(noMine);
-    noMinesNear.shift(0, 1);
+    noMinesNear.shift();
     renderBoard(gBoard);
   });
   if (noMineCnt !== noMinesNear.length) {
